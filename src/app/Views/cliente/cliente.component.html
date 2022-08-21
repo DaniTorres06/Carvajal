@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <h2 class="text-center fontTitle">Vuelos progamados</h2>
+  <div class="card mt-4">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-14">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Ciudad Origen</th>
+                <th scope="col">Ciudad Destino</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora de salida</th>
+                <th scope="col">Hora de llegada</th>
+                <th scope="col">Numero de vuelo</th>
+                <th scope="col">Aerolinea</th>
+                <th scope="col">Estado de vuelo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let vVuelos of vArrVuelo">
+                <td>{{vVuelos.ciudadOrigen}}</td>
+                <td>{{vVuelos.ciudadDestino}}</td>
+                <td>{{vVuelos.fecha | date:'dd/MM/yyyy' }}</td>
+                <td>{{vVuelos.horaSalida | date:'short':'IST' }}</td>
+                <td>{{vVuelos.horaLlegada | date:'short':'IST'}}</td>
+                <td>{{vVuelos.numeroVuelo}}</td>
+                <td>{{vVuelos.aerolinea}}</td>
+                <td>{{vVuelos.estadoVuelo}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

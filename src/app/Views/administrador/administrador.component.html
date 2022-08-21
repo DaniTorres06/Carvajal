@@ -1,0 +1,86 @@
+<div class="container mt-5">
+    <h2 class="text-center fontTitle">Programar vuelos</h2>
+    <div class="card mt-4">
+        <div class="card-body ">
+            <div class="row">
+                <div class="col-14">
+                    <form [formGroup]="CreateForm" (ngSubmit)="AddNewVuelo(CreateForm.value)">
+                        <div class="form-group">
+                            
+                            <label for="CiudadOrigen">Ciudad Origen</label>
+                            <!--
+                            <input type="text" class="form-control" formControlName = "ciudadOrigen" id="CiudadOrigen" placeholder="Ingrese ciudad de origen">
+                            -->
+                            
+                            <select class="form-select " formControlName = "ciudadOrigen" >
+                                <option selected>-- Seleccione la ciudad de origen --</option>
+                                <option *ngFor = "let vCiudad of vArrCiudad"> {{vCiudad.name}} </option>
+                            </select>
+                            
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="CiudadDestino">Ciudad Destino</label>
+                            <!--
+                            <input type="text" class="form-control" formControlName = "ciudadDestino" id="CiudadDestino" placeholder="Ingrese ciudad de destino">
+                            -->                            
+                            <select class="form-select" formControlName = "ciudadDestino" >
+                                <option selected>-- Seleccione la ciudad de destino --</option>
+                                <option *ngFor = "let vCiudad of vArrCiudad" > {{vCiudad.name}} </option>
+                            </select>
+                            
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="Fecha">Fecha</label>
+                            <input type="date" class="form-control" formControlName = "fecha" id="Fecha" placeholder="Ingrese fecha de viaje" value="2022-08-20">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="HoraSalida">Hora de salida</label>
+                            <input type="datetime-local" class="form-control" formControlName = "horaSalida" id="HoraSalida" placeholder="Ingrese hora de salida" >
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="HoraLlegada">Hora de llegada</label>
+                            <input type="datetime-local" class="form-control" formControlName = "horaLlegada" id="HoraLlegada" placeholder="Ingrese hora de llegada">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="NumVuelo">Numero de vuelo</label>
+                            <input type="number" class="form-control" formControlName = "numeroVuelo" id="NumVuelo" placeholder="Ingrese codigo de vuelo" [attr.disabled]="true" aria-label="Disabled input example">                                                       
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="Aerolinea">Aerolinea</label>
+                            <!--
+                            <input type="text" class="form-control" formControlName = "aerolinea" id="Aerolinea" placeholder="Ingrese aerolinea de preferencia">
+                            -->
+                            <select class="form-select" formControlName = "aerolinea" >
+                                <option selected>-- Aerolinea de preferencia --</option>
+                                <option *ngFor = "let vAerolineas of vAerolinea"> {{vAerolineas.name}} </option>
+                            </select>
+                        </div> 
+                        
+                        <div class="form-group mt-3">
+                            <label for="Estado">Estado de vuelo</label>
+                            <select class="form-select" formControlName = "estadoVuelo" >
+                                <option selected>-- Estado del vuelo --</option>
+                                <option *ngFor = "let vEstado of vStateVuelo"> {{vEstado.name}} </option>
+                            </select>
+                            
+                            <!--
+                            <input type="text" class="form-control" formControlName = "estadoVuelo" id="Estado" placeholder="Estado de vuelo">
+                            -->
+                        </div> 
+
+                        <!--
+
+                        <div class="form-check mt-3">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName = "CiudadOrigen"  value>
+                            <label class="form-check-label" for="exampleCheck1">Estado de vuelo</label>
+                        </div>
+                        -->
+                        
+                        <button type="submit" class="btn btn-primary  mt-3">Enviar</button>
+                    </form>
+
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
