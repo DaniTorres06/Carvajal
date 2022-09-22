@@ -1,6 +1,7 @@
 import { Time } from "@angular/common";
 
-export interface AdminI{    
+export interface AdminI{
+    id: number;
     ciudadOrigen: string;
     ciudadDestino: string;
     fecha: Date;
